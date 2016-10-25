@@ -1,7 +1,7 @@
 import React from 'react';
-import RoleAwareComponents from '../../RoleAwareComponent';
+import RoleAwareComponent from '../../RoleAwareComponent';
 
-class Home extends RoleAwareComponents {
+class Home extends RoleAwareComponent {
 
   constructor(props) {
     super(props);
