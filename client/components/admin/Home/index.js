@@ -1,10 +1,19 @@
 import React from 'react';
+import RoleAwareComponents from '../../RoleAwareComponent';
 
-class Home extends React.Component {
+class Home extends RoleAwareComponents {
+
+  constructor(props) {
+    super(props);
+
+    this.role(props.access);
+    this.permissionGroup(['admin']);
+  }
 
   render() {
-    return <h1>Admin</h1>
+    return this.access() ? <h1>Admin</h1> : null;
   }
+
 
 }
 

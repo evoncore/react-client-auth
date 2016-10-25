@@ -19,7 +19,7 @@ class RoleAwareComponent extends React.Component {
       });
     });
 
-    return !!truth;
+    return truth;
   }
 
 }
