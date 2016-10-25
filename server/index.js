@@ -9,10 +9,6 @@ import session from 'express-session';
 import webpack from 'webpack';
 import config from '../webpack.config.dev';
 
-// routes
-import user from './routes/user';
-import auth from './routes/auth';
-
 var app = express();
 var compiler = webpack(config);
 
@@ -43,14 +39,11 @@ app.use(express.static(path.join(__dirname, '/../dist')));
 app.use(express.static(path.join(__dirname, '/../public')));
 app.use(express.static(path.join(__dirname, '/../client')));
 
-app.use('/user', user);
-app.use('/auth', auth);
-
 app.get('*', function(req, res) {
   res.render(path.join(__dirname, '/views/index'));
 });
 
-var port = 5000;
+var port = 3000;
 app.listen(port, 'localhost', function(err) {
   if (err) {
     console.log(err);
