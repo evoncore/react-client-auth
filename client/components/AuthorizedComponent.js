@@ -5,7 +5,7 @@ class AuthorizedComponent extends RoleAwareComponent {
   constructor(props) {
     super(props);
 
-    this.props.routes.map(el => {
+    props.routes.map(el => {
       this.permissionGroup(el.authorize);
     });
   }
