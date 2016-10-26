@@ -10,7 +10,7 @@ export const userRouter = (
   <Provider store={store}>
     <Router history={history}>
 
-      <Route path="/" component={App} />
+      <Route authorize={['guest', 'user', 'admin']} path="/" component={App} />
 
     </Router>
   </Provider>

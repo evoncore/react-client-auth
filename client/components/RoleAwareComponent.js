@@ -22,6 +22,10 @@ class RoleAwareComponent extends React.Component {
     return truth;
   }
 
+  _render(jsx) {
+    return this.access() ? jsx : null;
+  }
+
 }
 
 export default RoleAwareComponent;

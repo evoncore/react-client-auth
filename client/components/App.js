@@ -1,5 +1,5 @@
 import React from 'react';
-import RoleAwareComponent from './RoleAwareComponent';
+import AuthorizedComponent from './AuthorizedComponent';
 
 // Connect
 import { connect } from 'react-redux';
@@ -16,18 +16,20 @@ import GuestHome from './guest/Home';
 import UserHome from './user/Home';
 import AdminHome from './admin/Home';
 
-class App extends RoleAwareComponent {
+class App extends AuthorizedComponent {
 
   constructor(props) {
     super(props);
 
     this.state = {
       access: props.access
-    }
+    };
+
+    this.role(props.access);
   }
 
   render() {
-    return (
+    return this._render(
       <div>
         <div className="container" id="app">
           <GuestHome access={this.state.access} />
@@ -35,7 +37,7 @@ class App extends RoleAwareComponent {
           <AdminHome access={this.state.access} />
         </div>
       </div>
-    )
+    );
   }
 
 }

@@ -11,8 +11,11 @@ class Home extends RoleAwareComponent {
   }
 
   render() {
-    return this.access() ? <h1>User</h1> : null;
+    return this._render(
+      <h1>User</h1>
+    );
   }
+
 
 }
 
