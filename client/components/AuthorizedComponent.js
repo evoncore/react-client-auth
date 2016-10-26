@@ -1,3 +1,4 @@
+import { PropTypes } from 'react';
 import RoleAwareComponent from './RoleAwareComponent';
 
 class AuthorizedComponent extends RoleAwareComponent {
@@ -10,6 +11,18 @@ class AuthorizedComponent extends RoleAwareComponent {
     });
   }
 
-}
+  componentWillMount() {
+    const { router } = this.context;
+
+    if (!this.access()) {
+      router.push(this.notAuthorizedPath);
+    }
+  }
+
+};
+
+AuthorizedComponent.contextTypes = {
+  router: PropTypes.object.isRequired
+};
 
 export default AuthorizedComponent;

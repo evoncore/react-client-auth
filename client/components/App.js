@@ -26,6 +26,7 @@ class App extends AuthorizedComponent {
     };
 
     this.role(props.access);
+    this.notAuthorizedPath = '/not-found';
   }
 
   render() {

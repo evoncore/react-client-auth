@@ -5,6 +5,6 @@ import bootstrap from 'bootstrap/dist/css/bootstrap.min.css';
 import css from '../public/stylus/main.styl';
 
 // Router
-import { userRouter } from './router';
+import router from './router';
 
-render(userRouter, document.querySelector('#root'));
+render(router, document.querySelector('#root'));
